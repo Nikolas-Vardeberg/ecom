@@ -29,7 +29,7 @@ interface CartContextType {
 
 export const CartContext = createContext<CartContextType | undefined>(undefined);
 
-const CartProvider = (props: Props) => {
+const CartProvider = ({ children }: Props) => {
     const [items, setItems] = useState<CartItem[]>([]);
     const [isOpen, setIsOpen] = useState(false);
 
@@ -78,7 +78,7 @@ const CartProvider = (props: Props) => {
                 cartTotal,
             }}
         >
-
+            {children}
         </CartContext.Provider>
     )
 }
