@@ -1,10 +1,8 @@
 import { getProduct } from "@/actions/products"
 import ProductAction from "@/components/product/ProductAction";
 import ProductQuantity from "@/components/product/ProductQuantity";
-import { useCart } from "@/hooks/use-cart";
 import Image from "next/image";
 import Link from "next/link";
-
 
 type Props = {
     params: { id: string }

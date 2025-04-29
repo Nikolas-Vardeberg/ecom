@@ -50,7 +50,8 @@ const Checkout = (props: Props) => {
                 size="lg"
                 className="w-full"
                 disabled={loading || items.length === 0}
-            >
+                onClick={() => onCheckout()}
+            > 
                 {loading ? "Processing..." : "Checkout"}
             </Button>
         </div>

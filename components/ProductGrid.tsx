@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet";
 import Image from "next/image";
+import Checkout from "./Checkout";
 
 type Props = {
     products: any[];
@@ -115,6 +116,7 @@ const ProductGrid = ({ products }: Props) => {
                                             <p>Subtotal</p>
                                             <p>${cartTotal}</p>
                                         </div>
+                                        <Checkout />
                                     </div>
                                 </div>
                             )}

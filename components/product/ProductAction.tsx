@@ -1,6 +1,7 @@
 "use client"
 
 import { useCart } from "@/hooks/use-cart"
+import Checkout from "../Checkout";
 
 type Props = {}
 
@@ -38,6 +39,7 @@ const ProductAction = (props: Props) => {
                     <div>Subtotal</div>
                     <div className="text-right">${cartTotal || 0}</div>
                 </div>
+                    <Checkout />
             </div>
         </div>
     )
