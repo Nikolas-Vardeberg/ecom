@@ -17,6 +17,9 @@ const ProductGrid = ({ products }: Props) => {
 
     const { isOpen, setIsOpen, items: cartItems, updateQuantity, removeItem: removeFromCart, cartTotal } = useCart();
 
+    console.log("Cartitems", cartItems);
+
+
     return(
         <div className="min-h-screen bg-white">
             <header className="sticky top-0 z-10 bg-white">
@@ -68,13 +71,13 @@ const ProductGrid = ({ products }: Props) => {
                                 </div>
                             ) : (
                                 <div className="flex flex-col h-full">
-                                    <div className="flex-1 overflow-auto py-6">
+                                    <div className="flex-1 overflow-auto p-6">
                                         <ul className="space-y-6">
                                             {cartItems.map((item) => (
                                                 <li key={item.id} className="flex gap-4">
                                                     <div className="h-24 w-24 shrink-0 overflow-hidden rounded-md border">
                                                         <Image 
-                                                            src={item.images[0].src || "/placeholder.png"}
+                                                            src={item.images?.[0]?.src || "/placeholder.png"}
                                                             alt={item.name}
                                                             width={96}
                                                             height={96}
@@ -107,7 +110,7 @@ const ProductGrid = ({ products }: Props) => {
                                             ))}
                                         </ul>
                                     </div>
-                                    <div className="border-t border-gray-200 py-6">
+                                    <div className="border-t border-gray-200 p-6">
                                         <div className="flex justify-between text-base font-medium text-gray-900 mb-4">
                                             <p>Subtotal</p>
                                             <p>${cartTotal}</p>
@@ -124,7 +127,7 @@ const ProductGrid = ({ products }: Props) => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-40">
                     {products.map((product, index) => (
                         <Link
-                            href={`/products/${product.id}`}
+                            href={`/product/${product.id}`}
                             key={index}
                             className="flex flex-col group relative"
                         >
